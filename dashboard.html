@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votar Claro - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+<body>
+    <h1>Bem-vindo ao Dashboard do Votar Claro, {{ username }}!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Próximos Eventos</h2>
+                <div id="calendar"></div>
+            </div>
+            <div class="col-md-6">
+                <h2>Documentos Importantes</h2>
+                <ul>
+                    <li><a href="Regimento do Votar Claro.pdf" target="_blank">Regimento do Votar Claro</a></li>
+                    <li><a href="#" target="_blank">Manual do Membro</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                events: [
+                    {
+                        title: 'Assembleia Geral',
+                        start: '2023-03-15',
+                        end: '2023-03-15'
+                    },
+                    {
+                        title: 'Votação Online',
+                        start: '2023-04-01',
+                        end: '2023-04-07'
+                    },
+                    {
+                        title: 'Reunião de Diretoria',
+                        start: '2023-05-10',
+                        end: '2023-05-10'
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
