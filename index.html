@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votar Claro</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Bem-vindo à Comunidade de membros do Votar Claro</h1>
@@ -31,12 +32,16 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            if (users[username] === password) {
-                // Login bem-sucedido, redirecionar para uma página de sucesso
-                window.location.href = "dashboard.html";
+            if (username && password) { // Add validation to ensure fields are not empty
+                if (users[username.toLowerCase()] === password.toLowerCase()) {
+                    // Login successful, redirect to dashboard.html
+                    window.location.href = "dashboard.html";
+                } else {
+                    // Login failed, display error message
+                    alert("Nome de usuário ou senha incorretos");
+                }
             } else {
-                // Login falhou, exibir mensagem de erro
-                alert("Nome de usuário ou senha incorretos");
+                alert("Por favor, preencha ambos os campos");
             }
         });
     </script>
