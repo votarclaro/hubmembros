@@ -8,7 +8,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     </head>
 <body>
-    <h1><img src="logo-votar-claro.png" alt="Votar Claro Logo" style="width: 40px; height: 40px; margin-right: 10px;"> Bem-vindo ao Dashboard do Votar Claro, {{ username }}!</h1>
+    <h1>
+        <img src="logo-votar-claro.png" alt="Votar Claro Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+        Bem-vindo ao Dashboard do Votar Claro, <span id="username-display"></span>!
+      </h1>
+      
+      <script>
+        const username = "{{ username }}";
+        const fullName = userNames[username];
+        document.getElementById('username-display').textContent = fullName;
+      </script>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
