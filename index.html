@@ -18,30 +18,27 @@
     </form>
 
     <script>
-const users = {
-    "JoaoFerreira": "joaoferreira".toLowerCase(),
-    "user2": "password2".toLowerCase(),
-    "user3": "password3".toLowerCase()
-};
+        const users = {
+            "joaoferreira": "joaoferreira",
+            "user2": "password2",
+            "user3": "password3"
+        };
 
         const form = document.getElementById("login-form");
 
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const username = document.getElementById("username").value;
+        form.addEventListener("submit", function() {
+            const username = document.getElementById("username").value.toLowerCase();
             const password = document.getElementById("password").value;
 
-            if (username && password) { // Add validation to ensure fields are not empty
-                if (users[username.toLowerCase()] === password.toLowerCase()) {
+            if (username && password) {
+                if (users[username] === password) {
                     // Login successful, redirect to dashboard.html
                     window.location.href = "dashboard.html";
                 } else {
-                    // Login failed, display error message
-                    alert("Nome de usuário ou senha incorretos");
+                    alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
                 }
             } else {
-                alert("Por favor, preencha ambos os campos");
+                alert("Por favor, preencha ambos os campos.");
             }
         });
     </script>
