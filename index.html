@@ -26,21 +26,23 @@
 
         const form = document.getElementById("login-form");
 
-        form.addEventListener("submit", function() {
-            const username = document.getElementById("username").value.toLowerCase();
-            const password = document.getElementById("password").value;
+        form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Add this line
 
-            if (username && password) {
-                if (users[username] === password) {
-                    // Login successful, redirect to dashboard.html
-                    window.location.href = "dashboard.html";
-                } else {
-                    alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
-                }
-            } else {
-                alert("Por favor, preencha ambos os campos.");
-            }
-        });
+    const username = document.getElementById("username").value.toLowerCase();
+    const password = document.getElementById("password").value;
+
+    if (username && password) {
+        if (users[username] === password) {
+            // Login successful, redirect to dashboard.html
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Nome de usuário ou senha incorretos. Por favor, tente novamente.");
+        }
+    } else {
+        alert("Por favor, preencha ambos os campos.");
+    }
+});
     </script>
 </body>
 </html>
